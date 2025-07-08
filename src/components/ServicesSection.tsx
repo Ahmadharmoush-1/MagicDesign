@@ -4,45 +4,45 @@ const ServicesSection = () => {
   const services = [
     {
       icon: <Zap className="h-12 w-12 text-blue-400" />,
-      title: "CNC Cutting",
-      description: "Precision aluminum cutting with advanced CNC technology for perfect dimensions and smooth finishes."
+      title: "قص CNC",
+      description: "قص الألمنيوم بدقة باستخدام تقنية CNC المتقدمة للحصول على أبعاد مثالية وتشطيبات ناعمة."
     },
     {
       icon: <Wrench className="h-12 w-12 text-blue-400" />,
-      title: "Professional Welding",
-      description: "Expert welding services ensuring strong, durable joints for all aluminum fabrication projects."
+      title: "اللحام الاحترافي",
+      description: "خدمات لحام متخصصة تضمن وصلات قوية ومتينة لجميع مشاريع تصنيع الألمنيوم."
     },
     {
       icon: <Sparkles className="h-12 w-12 text-blue-400" />,
-      title: "Powder Coating",
-      description: "High-quality powder coating for enhanced durability, weather resistance, and aesthetic appeal."
+      title: "طلاء البودرة",
+      description: "طلاء بودرة عالي الجودة لتعزيز المتانة، مقاومة الطقس، والجاذبية الجمالية."
     },
     {
       icon: <Shield className="h-12 w-12 text-blue-400" />,
-      title: "Anodizing",
-      description: "Professional anodizing services for corrosion resistance and enhanced surface properties."
+      title: "الأنودة",
+      description: "خدمات أنودة احترافية لمقاومة التآكل وتحسين خصائص السطح."
     },
     {
       icon: <Cog className="h-12 w-12 text-blue-400" />,
-      title: "Custom Fabrication",
-      description: "Tailored aluminum solutions designed and manufactured to meet your specific requirements."
+      title: "تصنيع مخصص",
+      description: "حلول ألمنيوم مصممة ومصنعة حسب متطلباتك الخاصة."
     },
     {
       icon: <Layers className="h-12 w-12 text-blue-400" />,
-      title: "Assembly & Installation",
-      description: "Professional installation services ensuring perfect fit and optimal performance of aluminum products."
+      title: "التجميع والتركيب",
+      description: "خدمات تركيب احترافية تضمن ملاءمة مثالية وأداء أمثل لمنتجات الألمنيوم."
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative">
+    <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 relative" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            Our Expertise
+            خبراتنا
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Comprehensive aluminum fabrication services with cutting-edge technology and skilled craftsmanship
+            خدمات شاملة لتصنيع الألمنيوم باستخدام أحدث التقنيات والحرفية الماهرة
           </p>
         </div>
 

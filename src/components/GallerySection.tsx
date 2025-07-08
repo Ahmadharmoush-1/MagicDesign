@@ -21,7 +21,7 @@ const GallerySection = () => {
       title: "Modern Office Building Facade",
       category: "Commercial",
       location: "Beirut, Lebanon",
-      date: "2024",
+      date: "2016",
       materials: "Anodized Aluminum, Tempered Glass",
       images: ["/photos/image1-1.jpg", "/photos/image1-2.jpg", "/photos/image1-3.jpg", "/photos/image1-1.jpg"],
       description: "Complete curtain wall system installation for a 12-story office building featuring energy-efficient glazing and custom aluminum frames."
@@ -30,7 +30,7 @@ const GallerySection = () => {
       title: "Luxury Villa Windows & Doors",
       category: "Residential",
       location: "Jounieh, Lebanon",
-      date: "2023",
+      date: "2017",
       materials: "Powder Coated Aluminum, Double Glazing",
       images: ["/photos/image2-1.jpg", "/photos/image2-2.jpg", "/photos/image2-3.jpg"],
       description: "Custom aluminum windows and doors with thermal break technology for enhanced energy efficiency."
@@ -39,7 +39,7 @@ const GallerySection = () => {
       title: "Shopping Mall Storefront",
       category: "Retail",
       location: "Dbayeh, Lebanon",
-      date: "2024",
+      date: "2018",
       materials: "Structural Glazing, Aluminum Composite",
       images: ["/photos/image3-1.jpg", "/photos/image3-2.jpg", "/photos/image3-3.jpg",  ],
       description: "Large-scale retail storefront with automated sliding doors and impact-resistant glazing."
@@ -48,16 +48,16 @@ const GallerySection = () => {
       title: "Hospital Entrance System",
       category: "Healthcare",
       location: "Achrafieh, Lebanon",
-      date: "2023",
+      date: "2020",
       materials: "Antimicrobial Coating, Safety Glass",
       images: ["/photos/image4-1.jpg", "/photos/image4-2.jpg","/photos/image4-3.jpg",],
       description: "Automatic entrance doors with antimicrobial aluminum surfaces and safety features for healthcare facility."
     },
     {
-      title: "Industrial Warehouse Cladding",
-      category: "Industrial",
-      location: "Tripoli, Lebanon",
-      date: "2024",
+      title: "Villa - Ain Jdeedeh",
+      category: "Villa",
+      location: "ALEY, Lebanon",
+      date: "2023",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image5-1.jpg", "/photos/image5-2.jpg", "/photos/image5-3.jpg",],
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
@@ -66,15 +66,15 @@ const GallerySection = () => {
      title: "Industrial Warehouse Cladding",
       category: "Industrial",
       location: "Tripoli, Lebanon",
-      date: "2024",
+      date: "2022",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image6-1.jpg", "/photos/image6-2.jpg", "/photos/image6-3.jpg", ],
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
     },
     {
-     title: "Industrial Warehouse Cladding",
-      category: "Industrial",
-      location: "Tripoli, Lebanon",
+     title: "VILLA - Ain AL Jadeedah",
+      category: "Villa",
+      location: "Aley, Lebanon",
       date: "2024",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image7-1.jpg", "/photos/image7-2.jpg", "/photos/image7-3.jpg", ],
@@ -84,7 +84,7 @@ const GallerySection = () => {
      title: "Industrial Warehouse Cladding",
       category: "Industrial",
       location: "Tripoli, Lebanon",
-      date: "2024",
+      date: "2023",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image8-1.jpg", "/photos/image8-2.jpg", "/photos/image8-3.jpg"],
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
@@ -130,13 +130,14 @@ const GallerySection = () => {
     <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-          <h2 className="text-fluid-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Project Gallery
-          </h2>
-          <p className="text-fluid sm:text-xl text-blue-200 max-w-3xl mx-auto">
-            Explore our portfolio of completed aluminum projects showcasing precision craftsmanship and innovative solutions
-          </p>
-        </div>
+  <h2 className="text-fluid-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+    معرض مشاريعنا
+  </h2>
+  <p className="text-fluid sm:text-xl text-blue-200 max-w-3xl mx-auto">
+    استكشف محفظتنا من المشاريع المكتملة في مجال الألمنيوم التي تُبرز دقة الصنعة وحلول مبتكرة
+  </p>
+</div>
+
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
@@ -191,6 +192,11 @@ const GallerySection = () => {
             </div>
           ))}
         </div>
+
+        {/* Message about more images below */}
+       <div className="mt-6 text-center text-blue-300 italic select-none">
+  لدينا العديد من المشاريع المميزة منذ عام 1986 وأكثر بكثير!
+</div>
 
         {/* Lightbox Modal */}
         {selectedProject && (

@@ -5,7 +5,7 @@ import ResponsiveVideo from './ResponsiveVideo';
 const HeroSection = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "96171953239";
-    const message = "Hello! I'm interested in your aluminum services.";
+    const message = "مرحبًا! أنا مهتم بخدمات الألمنيوم الخاصة بكم.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
@@ -33,14 +33,14 @@ const HeroSection = () => {
         <div className="max-w-4xl mx-auto lg:mx-0">
           <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl animate-fade-in">
             <h1 className="text-fluid-2xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-white leading-tight">
-              Transforming Metal into
+              تحويل المعدن إلى
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-white animate-slide-up">
-                Masterpieces
+                تحف فنية
               </span>
             </h1>
             <p className="text-fluid sm:text-xl md:text-2xl mb-6 sm:mb-8 text-blue-100 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              One Project at a Time – Professional aluminum fabrication with precision, 
-              innovation, and unmatched quality.
+"منذ عام 1986، مشروع واحد في كل مرة – تصنيع الألمنيوم باحترافية مع دقة، ابتكار، وجودة لا مثيل لها."
+
             </p>
             
             {/* Quick Contact Buttons */}
@@ -51,7 +51,7 @@ const HeroSection = () => {
                 onClick={handleWhatsAppClick}
               >
                 <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                WhatsApp Us
+                تواصل عبر واتساب
               </Button>
               <Button 
                 size="lg" 
@@ -60,7 +60,7 @@ const HeroSection = () => {
                 onClick={handleCallClick}
               >
                 <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                Call Now
+                اتصل الآن
               </Button>
               <Button 
                 size="lg" 
@@ -68,7 +68,7 @@ const HeroSection = () => {
                 className="border-2 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-md text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 will-change-transform"
                 onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                View Our Work
+                شاهد أعمالنا
               </Button>
             </div>
           </div>

@@ -28,12 +28,11 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About AluminumPro</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">About MagicDesign</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            With decades of experience in aluminum fabrication, we specialize in creating 
-            high-quality windows, doors, curtain walls, and custom aluminum solutions for 
-            residential and commercial projects.
-          </p>
+  مع عقود من الخبرة في تصنيع الألمنيوم، نحن متخصصون في ابتكار نوافذ وأبواب وأنظمة واجهات عالية الجودة، بالإضافة إلى حلول ألمنيوم مخصصة للمشاريع السكنية والتجارية.
+</p>
+
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

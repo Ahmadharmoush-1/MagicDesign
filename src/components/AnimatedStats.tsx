@@ -13,13 +13,13 @@ const AnimatedStats = () => {
     {
       icon: <Clock className="h-8 w-8 text-blue-400" />,
       label: "Years of Experience",
-      value: 15,
+      value: 39,
       suffix: "+"
     },
     {
       icon: <CheckCircle className="h-8 w-8 text-blue-400" />,
       label: "Projects Completed",
-      value: 500,
+      value: 250,
       suffix: "+"
     },
     {
@@ -51,8 +51,8 @@ const AnimatedStats = () => {
     };
 
     // Trigger animations with delays
-    setTimeout(() => animateCount(15, 'experience'), 200);
-    setTimeout(() => animateCount(500, 'projects'), 400);
+    setTimeout(() => animateCount(39, 'experience'), 200);
+    setTimeout(() => animateCount(250, 'projects'), 400);
     setTimeout(() => animateCount(200, 'clients'), 600);
     setTimeout(() => animateCount(98, 'satisfaction'), 800);
   }, []);
@@ -66,13 +66,14 @@ const AnimatedStats = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Excellence in Numbers
-          </h2>
-          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
-            Our commitment to quality and innovation speaks through our achievements
-          </p>
-        </div>
+  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+    التميز في الأرقام
+  </h2>
+  <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+    التزامنا بالجودة والابتكار يتجلى من خلال إنجازاتنا
+  </p>
+</div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
