@@ -126,7 +126,7 @@ const Services = () => {
                   <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30">
                     <Mail className="h-4 w-4 text-blue-400" />
                   </div>
-                  <span>info@magicdesign.com</span>
+                  <span>magicdesign@magicdesign.com</span>
                   
                 </div>
                 <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
