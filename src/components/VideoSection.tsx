@@ -1,186 +1,111 @@
-import React from 'react';
-import { Play } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+// import { Play, Clock, Eye } from 'lucide-react';
+// import ResponsiveImage from './ResponsiveImage';
 
-interface VideoSectionProps {
-  activeSection: 'bestsellers' | 'men' | 'women';
-}
+// const VideoSection = () => {
+//   const videos = [
+//     // {
+//     //   title: "CNC Precision Cutting Process",
+//     //   thumbnail: "/placeholder.svg",
+//     //   description: "Watch our state-of-the-art CNC machines create perfect aluminum components with micron-level precision.",
+//     //   duration: "3:45",
+//     //   views: "2.1K"
+//     // },
+//     // {
+//     //   title: "Curtain Wall Installation Timelapse",
+//     //   thumbnail: "/placeholder.svg", 
+//     //   description: "Complete installation of a 200m² curtain wall system from start to finish in this captivating timelapse.",
+//     //   duration: "5:22",
+//     //   views: "1.8K"
+//     // },
+//     // {
+//     //   title: "Powder Coating Excellence",
+//     //   thumbnail: "/placeholder.svg",
+//     //   description: "Behind the scenes of our powder coating process ensuring durable, weather-resistant finishes.",
+//     //   duration: "4:15",
+//     //   views: "1.5K"
+//     // },
+//     // {
+//     //   title: "Quality Control & Testing",
+//     //   thumbnail: "/placeholder.svg",
+//     //   description: "Our comprehensive quality assurance process ensuring every product meets the highest standards.",
+//     //   duration: "6:30",
+//     //   views: "2.5K"
+//     // },
+//     // {
+//     //   title: "Custom Fabrication Workshop",
+//     //   thumbnail: "/placeholder.svg",
+//     //   description: "Tour our modern fabrication facility and see how we bring custom aluminum solutions to life.",
+//     //   duration: "4:58",
+//     //   views: "1.9K"
+//     // },
+//     // {
+//     //   title: "Welding Mastery Techniques",
+//     //   thumbnail: "/placeholder.svg",
+//     //   description: "Professional welding techniques for creating strong, seamless aluminum joints and structures.",
+//     //   duration: "3:33",
+//     //   views: "1.7K"
+//     // }
+//   ];
 
-export const VideoSection: React.FC<VideoSectionProps> = ({ activeSection }) => {
-  const getVideoContent = () => {
-    switch (activeSection) {
-      case 'bestsellers':
-        return {
-          title: 'Best Sellers Collection',
-          description: 'Discover our most loved fragrances that have captured hearts worldwide.',
-          videos: [
-            {
-              id: 1,
-              title: 'Top Bestseller 1',
-              videoUrl: '/videos/mainsection2.mp4',
-              description: 'Our #1 bestselling fragrance'
-            },
-            {
-              id: 2,
-              title: 'Top Bestseller 2',
-              videoUrl: '/videos/mainsection1.mp4',
-              description: 'Customer favorite worldwide'
-            },
-            {
-              id: 3,
-              title: 'Top Bestseller 3',
-              videoUrl: '/videos/MainSection.mp4',
-              description: 'Award-winning fragrance'
-            }
-          ]
-        };
-      case 'men':
-        return {
-          title: 'Men\'s Collection',
-          description: 'Bold, masculine scents crafted for the modern gentleman.',
-          videos: [
-            {
-              id: 1,
-              title: 'Masculine Essence',
-              videoUrl: '/videos/mensection.mp4',
-              description: 'Bold and confident scent'
-            },
-            {
-              id: 2,
-              title: 'Gentleman\'s Choice',
-              videoUrl: '/videos/mensection1.mp4',
-              description: 'Sophisticated and refined'
-            },
-            // {
-            //   id: 3,
-            //   title: 'Adventure Spirit',
-            //   videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-            //   description: 'For the adventurous man'
-            // }
-          ]
-        };
-      case 'women':
-        return {
-          title: 'Women\'s Collection',
-          description: 'Elegant, sophisticated fragrances that embody feminine grace.',
-          videos: [
-            {
-              id: 1,
-              title: 'Elegant Rose',
-              videoUrl: '/videos/womensection1.mp4',
-              description: 'Timeless floral elegance'
-            },
-            {
-              id: 2,
-              title: 'Modern Goddess',
-              videoUrl: '/videos/womensection.mp4',
-              description: 'Contemporary feminine power'
-            },
-            // {
-            //   id: 3,
-            //   title: 'Sweet Harmony',
-            //   videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-            //   description: 'Perfect balance of sweet and fresh'
-            // }
-          ]
-        };
-      default:
-        return {
-          title: 'Our Collection',
-          description: 'Experience the world of premium fragrances.',
-          videos: [
-            {
-              id: 1,
-              title: 'Premium Collection',
-              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-              description: 'Luxury fragrances'
-            },
-            {
-              id: 2,
-              title: 'Signature Scents',
-              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-              description: 'Find your signature'
-            },
-            {
-              id: 3,
-              title: 'Artisan Crafted',
-              videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-              description: 'Handcrafted perfection'
-            }
-          ]
-        };
-    }
-  };
+//   return (
+//     <section id="videos" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+//       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+//           <h2 className="text-fluid-2xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+//             Process Videos
+//           </h2>
+//           <p className="text-fluid sm:text-xl text-slate-600 max-w-3xl mx-auto">
+//             See our aluminum fabrication and installation processes in action through these detailed showcase videos
+//           </p>
+//         </div>
 
-  const content = getVideoContent();
+//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+//           {videos.map((video, index) => (
+//             <div 
+//               key={index}
+//               className="group cursor-pointer hover:scale-105 transition-all duration-500 will-change-transform animate-scale-in"
+//               style={{ animationDelay: `${index * 0.1}s` }}
+//             >
+//               <div className="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden border border-white/50 shadow-lg hover:shadow-2xl transition-all duration-500">
+//                 <div className="relative overflow-hidden">
+//                   <ResponsiveImage
+//                     src={video.thumbnail}
+//                     alt={video.title}
+//                     className="w-full h-36 sm:h-40 lg:h-48 group-hover:scale-110 transition-transform duration-500"
+//                     aspectRatio="video"
+//                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+//                   />
+//                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
+//                     <div className="glass rounded-full p-4 sm:p-6 group-hover:scale-110 transition-transform duration-300 border border-white/30">
+//                       <Play className="h-6 w-6 sm:h-8 sm:w-8 text-white fill-current" />
+//                     </div>
+//                   </div>
+                  
+//                   {/* Video stats */}
+//                   <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3 flex justify-between items-center text-white text-xs sm:text-sm">
+//                     <div className="flex items-center bg-black/50 backdrop-blur-sm rounded-full px-2 py-1">
+//                       <Clock className="h-3 w-3 mr-1" />
+//                       {video.duration}
+//                     </div>
+//                     <div className="flex items-center bg-black/50 backdrop-blur-sm rounded-full px-2 py-1">
+//                       <Eye className="h-3 w-3 mr-1" />
+//                       {video.views}
+//                     </div>
+//                   </div>
+//                 </div>
+//                 <div className="p-4 sm:p-6 card-responsive">
+//                   <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+//                     {video.title}
+//                   </h3>
+//                   <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{video.description}</p>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
-  return (
-    <section className="bg-stone-400 py-16">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h3 className="text-4xl font-bold text-white mb-4">{content.title}</h3>
-          <p className="text-stone-100 text-lg max-w-2xl mx-auto">
-            {content.description}
-          </p>
-        </div>
-        
-        <div className="relative max-w-5xl mx-auto">
-          <Carousel className="w-full">
-            <CarouselContent>
-              {content.videos.map((video) => (
-                <CarouselItem key={video.id} className="pl-4">
-                  <div className="relative">
-                    <div
-  className="relative w-full bg-stone-600 rounded-xl overflow-hidden shadow-2xl"
-  style={{ aspectRatio: '16 / 9', height: '70vh' }} // larger height
->
-  {video.videoUrl.endsWith('.mp4') ? (
-   <video
-  src={video.videoUrl}
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="w-full h-full object-cover"
-/>
-  ) : (
-    <iframe
-      src={video.videoUrl}
-      title={video.title}
-      className="w-full h-full object-cover"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-    />
-  )}
-</div>
-                    
-                    {/* Video Info Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 rounded-b-xl">
-                      <h4 className="text-white font-semibold text-lg mb-1">{video.title}</h4>
-                      <p className="text-stone-200 text-sm">{video.description}</p>
-                    </div>
-                    
-                    {/* Play button overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                        <Play className="h-12 w-12 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="bg-stone-700 hover:bg-stone-800 text-white border-stone-600" />
-            <CarouselNext className="bg-stone-700 hover:bg-stone-800 text-white border-stone-600" />
-          </Carousel>
-        </div>
-      </div>
-    </section>
-  );
-};
+// export default VideoSection;

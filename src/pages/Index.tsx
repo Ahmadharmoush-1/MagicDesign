@@ -1,293 +1,115 @@
-import React, { useState } from 'react';
-import { PerfumeGrid } from '@/components/PerfumeGrid';
-import { Cart } from '@/components/cart';
-import { CustomerForm } from '@/components/CustomerForm';
-import { OrderSummary } from '@/components/OrderSummary';
-import { VideoSection } from '@/components/VideoSection';
-import { ShoppingBag, Sparkles } from 'lucide-react';
-export interface Perfume {
-  id: number;
-  name: string;
-  prices: {
-    '30ml': number;
-    '50ml': number;
-    '100ml': number;
-  };
-  image: string;
-  description: string;
-  category: 'bestsellers' | 'men' | 'women';
-}
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  size: string;
-  image: string;
-  description: string;
-  quantity: number;
-}
-export interface CustomerInfo {
-  name: string;
-  phone: string;
-  city: string;
-  address: string;
-  street: string;
-  building: string;
-  floor: string;
-}
+import { Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import HeroSection from '@/components/HeroSection';
+import AnimatedStats from '@/components/AnimatedStats';
+import GallerySection from '@/components/GallerySection';
+// import VideoSection from '@/components/VideoSection';
+import ContactSection from '@/components/ContactSection';
+import WhatsAppButton from '@/components/WhatsAppButton';
+
 const Index = () => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  const [showCart, setShowCart] = useState(false);
-  const [showCheckout, setShowCheckout] = useState(false);
-  const [activeSection, setActiveSection] = useState<'bestsellers' | 'men' | 'women'>('bestsellers');
-  const [customerInfo, setCustomerInfo] = useState<CustomerInfo>({
-    name: '',
-    phone: '',
-    city: '',
-    address: '',
-    street: '',
-    building: '',
-    floor: ''
-  });
-  const addToCart = (perfume: Perfume, size: string) => {
-    const price = perfume.prices[size as keyof typeof perfume.prices];
-    setCartItems(prev => {
-      const existingItem = prev.find(item => item.id === perfume.id && item.size === size);
-      if (existingItem) {
-        return prev.map(item => item.id === perfume.id && item.size === size ? {
-          ...item,
-          quantity: item.quantity + 1
-        } : item);
-      }
-      return [...prev, {
-        id: perfume.id,
-        name: perfume.name,
-        price,
-        size,
-        image: perfume.image,
-        description: perfume.description,
-        quantity: 1
-      }];
-    });
-  };
-  const updateQuantity = (id: number, size: string, quantity: number) => {
-    if (quantity === 0) {
-      setCartItems(prev => prev.filter(item => !(item.id === id && item.size === size)));
-    } else {
-      setCartItems(prev => prev.map(item => item.id === id && item.size === size ? {
-        ...item,
-        quantity
-      } : item));
-    }
-  };
-  const getTotalPrice = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity + 4 , 0);
-  };
-  const getCartItemCount = () => {
-    return cartItems.reduce((total, item) => total + item.quantity  , 0);
-  };    
-  const generateWhatsAppMessage = () => {
-    const orderDetails = cartItems.map((item, index) => {
-  const deliveryFee = 4;
-  const subtotal = (item.price * item.quantity) + deliveryFee;
-  return `${index + 1}. ${item.name} (${item.size})
-   Quantity: ${item.quantity}
-   Price: $${item.price} each
-   Delivery fees: $${deliveryFee}
-   Subtotal: $${subtotal.toFixed(2)}`;
-    }).join('\n\n');
-    const message = `🌟 New Perfume Order 🌟
-
-👤 Customer Information:
-Name: ${customerInfo.name}
-Phone: ${customerInfo.phone}
-City: ${customerInfo.city}
-Address: ${customerInfo.address}
-Street: ${customerInfo.street}
-Building: ${customerInfo.building}
-Floor: ${customerInfo.floor}
-
-🛍️ Order Details:
-${orderDetails}
-
-💰 Total: $${getTotalPrice()+ 4}
-
-💳 Payment Method: Cash on Delivery 💳
-
-Please confirm this order and let me know the delivery time. Thank you! 🙏`;
-    const encodedMessage = encodeURIComponent(message);
-
-    // Check if user is on mobile device
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    let whatsappUrl;
-    if (isMobile) {
-      // For mobile devices, use the whatsapp:// protocol which opens the WhatsApp app directly
-      whatsappUrl = `whatsapp://send?phone=96170027458&text=${encodedMessage}`;
-    } else {
-      // For desktop, use the web.whatsapp.com URL
-      whatsappUrl = `https://web.whatsapp.com/send?phone=96170027458&text=${encodedMessage}`;
-    }
-
-    // Try to open WhatsApp app first (mobile), fallback to web version
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-
-      // Additional fallback for mobile devices - if WhatsApp app doesn't open, try web version
-      if (isMobile) {
-        setTimeout(() => {
-          const webWhatsappUrl = `https://wa.me/96170027458?text=${encodedMessage}`;
-          window.open(webWhatsappUrl, '_blank');
-        }, 1000);
-      }
-    }, 0);
-  };
-  // Get section-specific background styling
-  const getSectionBackground = () => {
-    return 'bg-stone-500';
-  };
-
-  // Get section-specific navigation styling
-  const getNavBackground = () => {
-    return 'bg-stone-600';
-  };
-
-  // Get section-specific hero text styling
-  const getHeroTextColor = () => {
-    return 'text-white';
-  };
-
-  const getHeroSubTextColor = () => {
-    return 'text-stone-200';
-  };
-
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-fixed"
-      style={{
-        backgroundImage: `url('/photos/backgroundimage.png')`,
-        backgroundSize: 'auto',
-        backgroundRepeat: 'repeat'
-      }}
-    >
-      {/* Overlay for better readability */}
-      <div className="min-h-screen bg-stone-800/30">
-        {/* Header */}
-        <header className="bg-white/95 backdrop-blur-sm shadow-lg sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-6">
-             <div className="flex items-center space-x-2">
-       <img
-        src="\public\photos\worldofperfumefavicon.jpg" // replace with your logo path
-        alt="Logo"
-        className="h-8 w-8 object-contain"
-         />
-        <h1 className="text-3xl font-bold text-gray-800">World of Perfume Lab</h1>
+    <div className="min-h-screen bg-slate-900">
+      {/* Modern Header with glassmorphism */}
+      <header className="bg-slate-900/80 backdrop-blur-md border-b border-white/10 sticky top-0 z-40 shadow-lg">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex justify-between items-center">
+            <Link to="/" className="flex items-center space-x-3">
+             <img 
+  src="/photos/logo.png" 
+  alt="MagicDesign Logo" 
+  className="h-20 w-20 rounded-full object-cover"
+/>
+
+            </Link>
+            <nav className="hidden md:flex space-x-6 lg:space-x-8">
+              <Link to="/" className="text-white hover:text-blue-300 transition-colors duration-300 font-medium text-sm lg:text-base">Home</Link>
+              <Link to="/about" className="text-white hover:text-blue-300 transition-colors duration-300 font-medium text-sm lg:text-base">About</Link>
+              <Link to="/services" className="text-white hover:text-blue-300 transition-colors duration-300 font-medium text-sm lg:text-base">Services</Link>
+              <a href="#gallery" className="text-white hover:text-blue-300 transition-colors duration-300 font-medium text-sm lg:text-base">Gallery</a>
+              <a href="#videos" className="text-white hover:text-blue-300 transition-colors duration-300 font-medium text-sm lg:text-base">Videos</a>
+              <a href="#contact" className="text-white hover:text-blue-300 transition-colors duration-300 font-medium text-sm lg:text-base">Contact</a>
+            </nav>
+          </div>
         </div>
-              
-              <div className="flex items-center space-x-4">
-                <button
-                  onClick={() => setShowCart(true)}
-                  className="relative p-3 bg-gray-600 text-white rounded-full hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <ShoppingBag className="h-6 w-6" />
-                  {getCartItemCount() > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-gray-800 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center font-bold">
-                      {getCartItemCount()}
-                    </span>
-                  )}
-                </button>
+      </header>
+
+      {/* Main Content */}
+      <main>
+        <HeroSection />
+        <AnimatedStats />
+        <GallerySection />
+        {/* <VideoSection /> */}
+        <ContactSection />
+      </main>
+
+      {/* Modern Footer */}
+      <footer className="bg-slate-950 text-white py-12 sm:py-16 border-t border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+            <div className="animate-fade-in">
+              <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+       <img 
+  src="\public\photos\logo.png" 
+  alt="MagicDesign Logo" 
+  className="h-8 sm:h-10 w-auto rounded-full"
+/>
+
+              </div>
+              <p className="text-slate-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+                Professional aluminum solutions for construction and design needs. 
+                Transforming metal into masterpieces with precision and innovation.
+              </p>
+              <div className="flex space-x-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600/20 rounded-full flex items-center justify-center border border-blue-400/30">
+                  <span className="text-blue-400 font-bold text-sm sm:text-base">MD</span>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-
-        {/* Navigation */}
-        <nav className="border-b border-stone-300 bg-stone-600/90 backdrop-blur-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center space-x-8 py-4">
-              {[
-                { id: 'bestsellers', label: 'Best Sellers' },
-                { id: 'men', label: 'Men\'s Collection' },
-                { id: 'women', label: 'Women\'s Collection' }
-              ].map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => setActiveSection(section.id as 'bestsellers' | 'men' | 'women')}
-                  className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
-                    activeSection === section.id
-                      ? 'bg-stone-800 text-white shadow-lg'
-                      : 'bg-white/90 text-stone-700 hover:bg-white shadow backdrop-blur-sm'
-                  }`}
-                >
-                  {section.label}
-                </button>
-              ))}
+            <div className="animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-white">Contact Information</h3>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
+                  <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30 flex-shrink-0">
+                    <Phone className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm sm:text-base">+961 71 953 239</span>
+                </div>
+                <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
+                  <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30 flex-shrink-0">
+                    <Mail className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm sm:text-base break-all">info@magicdesign.com</span>
+                </div>
+                <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
+                  <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30 flex-shrink-0">
+                    <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400" />
+                  </div>
+                  <span className="text-sm sm:text-base">Lebanon</span>
+                </div>
+              </div>
+            </div>
+            <div className="animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-white">Our Services</h3>
+              <ul className="space-y-2 sm:space-y-3 text-slate-300 text-sm sm:text-base">
+                <li className="hover:text-blue-300 transition-colors duration-300 cursor-pointer">• Aluminum Windows & Doors</li>
+                <li className="hover:text-blue-300 transition-colors duration-300 cursor-pointer">• Curtain Wall Systems</li>
+                <li className="hover:text-blue-300 transition-colors duration-300 cursor-pointer">• CNC Cutting & Fabrication</li>
+                <li className="hover:text-blue-300 transition-colors duration-300 cursor-pointer">• Powder Coating & Anodizing</li>
+                <li className="hover:text-blue-300 transition-colors duration-300 cursor-pointer">• Custom Aluminum Solutions</li>
+              </ul>
             </div>
           </div>
-        </nav>
-
-        {/* Hero Section */}
-        <section className="py-20 px-4 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-              Discover Your Perfect
-              <span className="block text-stone-100">
-                Fragrance
-              </span>
-            </h2>
-            <p className="text-xl text-stone-200 mb-8 max-w-2xl mx-auto drop-shadow-md">
-              Luxury perfumes crafted with the finest ingredients. Find your signature scent today.
+          <div className="border-t border-slate-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <p className="text-slate-400 text-sm sm:text-base">
+              © 1986 MagicDesign. All rights reserved. | Crafted with precision and innovation
             </p>
           </div>
-        </section>
+        </div>
+      </footer>
 
-        {/* Video Section */}
-        <VideoSection activeSection={activeSection} />
-
-        {/* Main Content */}
-        {!showCheckout ? (
-          <PerfumeGrid onAddToCart={addToCart} activeSection={activeSection} />
-        ) : (
-          <div className="max-w-4xl mx-auto px-4 py-8">
-            <div className="grid md:grid-cols-2 gap-8">
-              <CustomerForm customerInfo={customerInfo} setCustomerInfo={setCustomerInfo} />
-              <OrderSummary
-                cartItems={cartItems}
-                totalPrice={getTotalPrice()}
-                onCompleteOrder={generateWhatsAppMessage}
-                customerInfo={customerInfo}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Cart Sidebar */}
-        <Cart
-          isOpen={showCart}
-          onClose={() => setShowCart(false)}
-          cartItems={cartItems}
-          updateQuantity={updateQuantity}
-          totalPrice={getTotalPrice()}
-          onProceedToCheckout={() => {
-            setShowCart(false);
-            setShowCheckout(true);
-          }}
-        />
-
-        {/* Checkout Navigation */}
-        {showCheckout && (
-          <div className="fixed bottom-4 left-4 right-4 z-50">
-            <div className="max-w-4xl mx-auto">
-              <button
-                onClick={() => setShowCheckout(false)}
-                className="bg-gray-600/90 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition-colors backdrop-blur-sm"
-              >
-                ← Back to Shopping
-              </button>
-            </div>
-          </div>
-        )}
-      </div>
+      {/* Enhanced WhatsApp Button */}
+      <WhatsAppButton />
     </div>
   );
 };
