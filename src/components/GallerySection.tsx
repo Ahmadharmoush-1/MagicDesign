@@ -20,7 +20,7 @@ const GallerySection = () => {
     {
       title: "Modern Office Building Facade",
       category: "Commercial",
-      location: "Beirut, Lebanon",
+      location: "Jezzine, Lebanon",
       date: "2016",
       materials: "Anodized Aluminum, Tempered Glass",
       images: ["/photos/image1-1.jpg", "/photos/image1-2.jpg", "/photos/image1-3.jpg", "/photos/image1-1.jpg"],
@@ -29,7 +29,7 @@ const GallerySection = () => {
     {
       title: "Luxury Villa Windows & Doors",
       category: "Residential",
-      location: "Jounieh, Lebanon",
+      location: "Chouifat, Lebanon",
       date: "2017",
       materials: "Powder Coated Aluminum, Double Glazing",
       images: ["/photos/image2-1.jpg", "/photos/image2-2.jpg", "/photos/image2-3.jpg"],
@@ -38,7 +38,7 @@ const GallerySection = () => {
     {
       title: "Shopping Mall Storefront",
       category: "Retail",
-      location: "Dbayeh, Lebanon",
+      location: "Aaraya, Lebanon",
       date: "2018",
       materials: "Structural Glazing, Aluminum Composite",
       images: ["/photos/image3-1.jpg", "/photos/image3-2.jpg", "/photos/image3-3.jpg",  ],
@@ -47,16 +47,16 @@ const GallerySection = () => {
     {
       title: "Hospital Entrance System",
       category: "Healthcare",
-      location: "Achrafieh, Lebanon",
+      location: "Hotel dieu, Lebanon",
       date: "2020",
       materials: "Antimicrobial Coating, Safety Glass",
       images: ["/photos/image4-1.jpg", "/photos/image4-2.jpg","/photos/image4-3.jpg",],
       description: "Automatic entrance doors with antimicrobial aluminum surfaces and safety features for healthcare facility."
     },
     {
-      title: "Villa - Ain Jdeedeh",
-      category: "Villa",
-      location: "ALEY, Lebanon",
+      title: "View bchamoun",
+      category: "Residential",
+      location: "Bchamoun, Lebanon",
       date: "2023",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image5-1.jpg", "/photos/image5-2.jpg", "/photos/image5-3.jpg",],
@@ -65,7 +65,7 @@ const GallerySection = () => {
     {
      title: "Industrial Warehouse Cladding",
       category: "Industrial",
-      location: "Tripoli, Lebanon",
+      location: "Baabdat, Lebanon",
       date: "2022",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image6-1.jpg", "/photos/image6-2.jpg", "/photos/image6-3.jpg", ],
@@ -83,7 +83,7 @@ const GallerySection = () => {
     {
      title: "Industrial Warehouse Cladding",
       category: "Industrial",
-      location: "Tripoli, Lebanon",
+      location: "Jnoub, Lebanon",
       date: "2023",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image8-1.jpg", "/photos/image8-2.jpg", "/photos/image8-3.jpg"],
@@ -92,10 +92,37 @@ const GallerySection = () => {
     {
      title: "Industrial Warehouse Cladding",
       category: "Industrial",
-      location: "Tripoli, Lebanon",
+      location: "Nabateyeh, Lebanon",
       date: "2024",
       materials: "Insulated Aluminum Panels, Weather Sealing",
       images: ["/photos/image9-1.jpg", "/photos/image9-2.jpg", "/photos/image9-3.jpg", "/photos/image9-4.jpg"],
+      description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
+    },
+    {
+     title: "Industrial Warehouse Cladding",
+      category: "Industrial",
+      location: "Bent Jbeil, Lebanon",
+      date: "2024",
+      materials: "Insulated Aluminum Panels, Weather Sealing",
+      images: ["/photos/image10-1.jpg", "/photos/image10-2.jpg", "/photos/image10-3.jpg", ],
+      description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
+    },
+    {
+     title: "Industrial Warehouse Cladding",
+      category: "Industrial",
+      location: "Batroun, Lebanon",
+      date: "2024",
+      materials: "Insulated Aluminum Panels, Weather Sealing",
+      images: ["/photos/image11-1.jpg", "/photos/image11-2.jpg", ],
+      description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
+    },
+    {
+     title: "Industrial Warehouse Cladding",
+      category: "Industrial",
+      location: "Tripoli, Lebanon",
+      date: "2024",
+      materials: "Insulated Aluminum Panels, Weather Sealing",
+      images: ["/photos/image12-1.jpg", "/photos/image12-2.jpg", ],
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
     }
   ];
