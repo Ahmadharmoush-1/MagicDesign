@@ -51,7 +51,7 @@ const Index = () => {
                 <img 
                   src="/public/photos/logo.png" 
                   alt="شعار MagicDesign" 
-                  className="h-8 sm:h-10 w-auto rounded-full"
+                  className="h-12 sm:h-11  w-auto rounded-full"
                 />
               </div>
               <p className="text-slate-300 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
