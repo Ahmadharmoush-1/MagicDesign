@@ -116,19 +116,19 @@ const Services = () => {
             <div>
               <h3 className="text-xl font-bold mb-6 text-white">Contact Information</h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
+                {/* <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
                   <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30">
                     <Phone className="h-4 w-4 text-blue-400" />
                   </div>
                   <span>+961 71 953 239</span>
-                </div>
-                <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
+                </div> */}
+                {/* <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
                   <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30">
                     <Mail className="h-4 w-4 text-blue-400" />
                   </div>
                   <span>magicdesign@.com</span>
                   
-                </div>
+                </div> */}
                 <div className="flex items-center space-x-3 text-slate-300 hover:text-blue-300 transition-colors duration-300">
                   <div className="bg-blue-600/20 rounded-lg p-2 border border-blue-400/30">
                     <MapPin className="h-4 w-4 text-blue-400" />
