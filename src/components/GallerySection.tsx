@@ -18,6 +18,15 @@ const GallerySection = () => {
 
   const projects: Project[] = [
     {
+      title: "Luxury Villa",
+      category: "Residential",
+      location: "Sibline, Lebanon",
+      date: "2023",
+      materials: "Anodized Aluminum",
+      images: ["/photos/image13-1.jpg", "/photos/image13-2.jpg", "/photos/image13-3.jpg", "/photos/image13-4.jpg","/photos/image13-5.jpg", "/photos/image13-6.jpg","photos/image13-7.jpg"],
+      description: "Complete curtain wall system installation for a 12-story office building featuring energy-efficient glazing and custom aluminum frames."
+    },
+    {
       title: "Modern Office Building Facade",
       category: "Commercial",
       location: "Jezzine, Lebanon",
