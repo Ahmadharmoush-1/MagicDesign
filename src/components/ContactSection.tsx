@@ -15,7 +15,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="flex items-start space-x-4 rtl:space-x-reverse">
+            {/* <div className="flex items-start space-x-4 rtl:space-x-reverse">
               <div className="bg-blue-100 p-3 rounded-lg">
                 <Phone className="h-6 w-6 text-blue-600" />
               </div>
@@ -24,9 +24,9 @@ const ContactSection = () => {
                 <p className="text-gray-600">+961 71 953 239</p>
                 <p className="text-sm text-gray-500">اتصل بنا للمساعدة الفورية</p>
               </div>
-            </div>
+            </div> */}
 
-            <div className="flex items-start space-x-4 rtl:space-x-reverse">
+            {/* <div className="flex items-start space-x-4 rtl:space-x-reverse">
               <div className="bg-blue-100 p-3 rounded-lg">
                 <Mail className="h-6 w-6 text-blue-600" />
               </div>
@@ -35,7 +35,7 @@ const ContactSection = () => {
                 <p className="text-gray-600">info@aluminumpro.com</p>
                 <p className="text-sm text-gray-500">أرسل لنا تفاصيل مشروعك</p>
               </div>
-            </div>
+            </div> */}
 
             <div className="flex items-start space-x-4 rtl:space-x-reverse">
               <div className="bg-blue-100 p-3 rounded-lg">

@@ -14,6 +14,10 @@ const HeroSection = () => {
     window.open('tel:+96171953239', '_self');
   };
 
+  const scrollToGallery = () => {
+    document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
@@ -39,8 +43,7 @@ const HeroSection = () => {
               </span>
             </h1>
             <p className="text-fluid sm:text-xl md:text-2xl mb-6 sm:mb-8 text-blue-100 leading-relaxed animate-slide-up" style={{ animationDelay: '0.2s' }}>
-"منذ عام 1986، مشروع واحد في كل مرة – تصنيع الألمنيوم باحترافية مع دقة، ابتكار، وجودة لا مثيل لها."
-
+              "منذ عام 1986، مشروع واحد في كل مرة – تصنيع الألمنيوم باحترافية مع دقة، ابتكار، وجودة لا مثيل لها."
             </p>
             
             {/* Quick Contact Buttons */}
@@ -53,20 +56,20 @@ const HeroSection = () => {
                 <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 تواصل عبر واتساب
               </Button>
+
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-2 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-md text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 will-change-transform"
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 will-change-transform"
                 onClick={handleCallClick}
               >
                 <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 اتصل الآن
               </Button>
+
               <Button 
                 size="lg" 
-                variant="outline" 
-                className="border-2 border-white/30 text-white hover:bg-white/20 hover:text-white backdrop-blur-md text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl transition-all duration-300 hover:scale-105 will-change-transform"
-                onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 will-change-transform"
+                onClick={scrollToGallery}
               >
                 شاهد أعمالنا
               </Button>
