@@ -19,7 +19,7 @@ const GallerySection = () => {
   const projects: Project[] = [
     {
       title: "Luxury Villa",
-      category: "Residential",
+      category: "Luxury Residential Buildind",
       location: "Sibline, Lebanon",
       date: "2023",
       materials: "Anodized Aluminum",
@@ -45,8 +45,8 @@ const GallerySection = () => {
       description: "Custom aluminum windows and doors with thermal break technology for enhanced energy efficiency."
     },
     {
-      title: "Shopping Mall Storefront",
-      category: "Retail",
+      title: "Indoor House Design",
+      category: "Home Interior Design",
       location: "Aaraya, Lebanon",
       date: "2018",
       materials: "Structural Glazing, Aluminum Composite",
@@ -72,8 +72,8 @@ const GallerySection = () => {
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
     },
     {
-     title: "Industrial Warehouse Cladding",
-      category: "Industrial",
+     title: "Villa ",
+      category: "Luxurious Villa",
       location: "Baabdat, Lebanon",
       date: "2022",
       materials: "Insulated Aluminum Panels, Weather Sealing",
@@ -108,17 +108,17 @@ const GallerySection = () => {
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
     },
     {
-     title: "Industrial Warehouse Cladding",
-      category: "Industrial",
+     title: "Luxury Villa",
+      category: "Villa",
       location: "Bent Jbeil, Lebanon",
       date: "2024",
       materials: "Insulated Aluminum Panels, Weather Sealing",
-      images: ["/photos/image10-1.jpg", "/photos/image10-2.jpg", "/photos/image10-3.jpg", ],
+      images: ["/photos/image10-1.jpg", "/photos/image10-2.jpg", "/photos/image10-3.jpg","/photos/image1-3.jpg" ],
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
     },
     {
-     title: "Industrial Warehouse Cladding",
-      category: "Industrial",
+     title: "Exterior Building",
+      category: "Exterior Building",
       location: "Batroun, Lebanon",
       date: "2024",
       materials: "Insulated Aluminum Panels, Weather Sealing",
@@ -126,8 +126,8 @@ const GallerySection = () => {
       description: "Complete building envelope solution with insulated aluminum cladding for optimal thermal performance."
     },
     {
-     title: "Industrial Warehouse Cladding",
-      category: "Industrial",
+     title: "House",
+      category: "House Exterior",
       location: "Tripoli, Lebanon",
       date: "2024",
       materials: "Insulated Aluminum Panels, Weather Sealing",

@@ -22,10 +22,10 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <div 
+        {/* <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: 'url(/public/photos/background.png)' }}
-        />
+        /> */}
         {/* Background overlay */}
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
       </div>
